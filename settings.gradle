@@ -1,0 +1,2 @@
+rootProject.name='conde_exer5_LightsOutv2'
+include ':app'
