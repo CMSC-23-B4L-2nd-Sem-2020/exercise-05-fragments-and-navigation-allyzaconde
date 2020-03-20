@@ -4,15 +4,17 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.conde_exer5_lightsoutv2.databinding.FragmentGameBinding
+
 
 /**
  * A simple [Fragment] subclass.
@@ -187,16 +189,13 @@ class GameFragment : Fragment() {
             }
         }
         if(counter == 25){
-//            val winner:TextView = binding.viewCount
-//            winner.setText(R.string.winner)
-//            winner.append(" ")
-//            winner.append(moveCount.toString())
-//            winner.append(" moves :)")
-            view.findNavController().navigate(R.id.action_gameFragment_to_endGameFragment)
+            var winner = "You won the game with " + moveCount.toString() + " moves."
+            var bundle = bundleOf("congrats" to winner) //bundles "congrats" key to winner for passing data
+
+            view.findNavController().navigate(R.id.action_gameFragment_to_endGameFragment,bundle)
             check = true
         }else{
             return
         }
-
     }
 }

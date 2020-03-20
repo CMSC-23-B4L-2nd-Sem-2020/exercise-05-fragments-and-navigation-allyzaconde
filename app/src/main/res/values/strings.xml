@@ -8,7 +8,6 @@
     <string name="nickname">Nickname</string>
     <string name="done">Done</string>
     <string name="reset">Reset</string>
-    <string name="winner">Congratulations! You won with</string>
     <string name="retry">Retry</string>
     <string name="congratulations">Congratulations! :)</string>
 </resources>
